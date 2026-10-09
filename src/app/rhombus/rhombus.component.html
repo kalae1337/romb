@@ -2,14 +2,14 @@
     <div class="form-card">
         <h2>Rhombus</h2>
 
-        <img src="/rombusz_atlokkal.png" alt="Demonstration of rhombus and its diagonals" width="400" loading="lazy">
+        <h1>T = 1/2ef</h1>
 
         <form [formGroup]="rhombusForm" (ngSubmit)="startCalc()">
         <div class="input-form">
 
                 @if(rhombusForm.get('diagonalE')?.hasError('required') &&
                 rhombusForm.get('diagonalE')?.touched){
-                <span>diagonal E value is crucial for the calculation!</span>        }
+                <span>Diagonal E value is crucial for the calculation!</span>        }
 
                 @if(rhombusForm.get('diagonalE')?.hasError('min') &&
                 rhombusForm.get('diagonalE')?.touched){
@@ -18,12 +18,12 @@
 
                 <div class="i-g">
                 <input id="diagonalE" type="text" formControlName="diagonalE" placeholder=" " />
-                <label for="diagonalE">diagonal E length</label>
+                <label for="diagonalE">Diagonal E length</label>
                 </div>
 
                 @if(rhombusForm.get('diagonalF')?.hasError('required') &&
                 rhombusForm.get('diagonalF')?.touched){
-                <span>diagonal F value is crucial for the calculation!</span>        }
+                <span>Diagonal F value is crucial for the calculation!</span>        }
 
                 @if(rhombusForm.get('diagonalF')?.hasError('min') &&
                 rhombusForm.get('diagonalF')?.touched){
@@ -32,7 +32,7 @@
 
                 <div class="i-g">
                 <input id="diagonalF" type="text" formControlName="diagonalF" placeholder=" " />
-                <label for="diagonalF">diagonal F length</label>
+                <label for="diagonalF">Diagonal F length</label>
                 </div>
 
                 <button type="submit">Calculate</button>
@@ -40,7 +40,7 @@
                 @if (showValue) {
                 <div class="i-g">
                     <input id="area" type="text" formControlName="area" readonly placeholder=" " />
-                    <label for="area">area</label>
+                    <label for="area">Area</label>
                 </div>
                 }
 
