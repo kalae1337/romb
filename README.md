@@ -1,59 +1,84 @@
-# Romb
+# Rhombus Area Calculator
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.2.
+An Angular app that calculates the area of a rhombus from the lengths of its two diagonals. The app has three sections: **Home**, **Rhombus calculator** and **About**.
 
-## Development server
+**Author:** Your Name, Your Class
 
-To start a local development server, run:
+## Features
+
+- **Home:** landing page with a short introduction to the app
+- **Rhombus calculator:** reactive form with two inputs (diagonal `e` and diagonal `f`)
+  - Validation: both fields are required and must be at least 1
+  - The submit button stays disabled until the form is valid
+  - The calculated area is shown after pressing the button
+  - Illustration of a rhombus with its diagonals
+- **About:** information about the project and its author
+- Navigation between the sections
+
+## Formula
+
+The area of a rhombus is half the product of its diagonals:
+
+```
+T = (e * f) / 2
+```
+
+Example: e = 10, f = 6 gives T = 30.
+
+## Tech Stack
+
+- Angular (standalone components, `@if` control flow, requires Angular 17+)
+- Angular Router for navigation between Home, Rhombus and About
+- TypeScript
+- Angular Reactive Forms (`ReactiveFormsModule`, `FormBuilder`, `Validators`)
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (LTS recommended)
+- Angular CLI: `npm install -g @angular/cli`
+
+### Installation and run
 
 ```bash
+npm install
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Then open http://localhost:4200 in your browser.
 
-## Code scaffolding
+## Pages
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+| Route | Component | Description |
+| --- | --- | --- |
+| `/home` | Home | Landing page |
+| `/rhombus` | Rhombus | Area calculator form |
+| `/about` | About | About the project and author |
 
-```bash
-ng generate component component-name
+## Project Structure
+
+```
+src/app/
+├── home/
+│   └── home.component.*       # home page
+├── rhombus/
+│   ├── rhombus.component.ts   # form definition, validators, area calculation
+│   ├── rhombus.component.html # template: form, result, image
+│   └── rhombus.component.css  # component styles
+├── about/
+│   └── about.component.*      # about page
+├── app.routes.ts              # route definitions
+└── app.component.*            # root component with navigation
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## How the Calculator Works
 
-```bash
-ng generate --help
-```
+1. `FormBuilder` creates the `rhombusForm` group with the controls `diagonalE`, `diagonalF` and `area`.
+2. On submit, `startCalc()` reads both diagonals, converts them to numbers and calls `calcArea()`.
+3. `calcArea(diagonalE, diagonalF)` returns `(1/2) * diagonalE * diagonalF`.
+4. The result is written to the `area` control and `showValue` is set to `true`, which displays the result in the template.
 
-## Building
+## Notes
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- This project uses **reactive forms** (not template-driven), so the form logic and validators live in the TypeScript class.
