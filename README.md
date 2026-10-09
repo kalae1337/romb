@@ -79,6 +79,3 @@ src/app/
 3. `calcArea(diagonalE, diagonalF)` returns `(1/2) * diagonalE * diagonalF`.
 4. The result is written to the `area` control and `showValue` is set to `true`, which displays the result in the template.
 
-## Notes
-
-- This project uses **reactive forms** (not template-driven), so the form logic and validators live in the TypeScript class.
