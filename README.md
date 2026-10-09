@@ -20,10 +20,10 @@ An Angular app that calculates the area of a rhombus from the lengths of its two
 The area of a rhombus is half the product of its diagonals:
 
 ```
-T = (e * f) / 2
+A = (e * f) / 2
 ```
 
-Example: e = 10, f = 6 gives T = 30.
+Example: e = 10, f = 6 gives A = 30.
 
 ## Tech Stack
 
