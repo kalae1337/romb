@@ -2,7 +2,7 @@
 
 An Angular app that calculates the area of a rhombus from the lengths of its two diagonals. The app has three sections: **Home**, **Rhombus calculator** and **About**.
 
-**Author:** Your Name, Your Class
+**Author:** Dóra Boglárka, Szoft II N
 
 ## Features
 
